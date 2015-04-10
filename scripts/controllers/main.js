@@ -1,11 +1,8 @@
 'use strict';
 
-angular.module('caleb')
-  .controller('MainCtrl', function ($scope,$rootScope, LoadData, $http) {
-
-
+angular.module('caleb').controller('MainCtrl', function ($scope,$rootScope, LoadData, $http) {
+  
   console.log("Main Controller");
-
   if(!$rootScope.postData){
     LoadData.fetch().then(
       function(result) {

@@ -2,19 +2,19 @@
 
 angular
   .module('caleb', ['ngRoute'])
-  .run(function($route, $rootScope) {})
+  .run(function($route, $rootScope) {
+    console.log("Caleb app starting");
+  })
   .config(function ($routeProvider) {
    //adding routes and controllers to $route service
     $routeProvider
-      .when('/', {
-        controller: 'MainCtrl'
-      })
       .when('/about', {
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl'
       })
       .otherwise({
-        redirectTo: '/'
+        redirectTo: '/',
+        controller: 'MainCtrl'
       });
   });
 
