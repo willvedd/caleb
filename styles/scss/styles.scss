@@ -17,13 +17,14 @@ html{
     -moz-osx-font-smoothing: grayscale;
 }
 body, html{
+	font-family: $f-sans-serif;
 	@include font-size(16);
 	margin: 0;
 	padding: 0;
 }
 
 .container{
-	max-width: 1440px;
+	max-width: 1080px;
 	margin: 0 auto;
 	width: 95%;
 	@include bp(sml) {
@@ -63,7 +64,7 @@ ul{
 //========================
 // Header
 //========================
-.header{
+#header{
 	padding: 25px 0;
 
 	.masthead{
@@ -73,6 +74,7 @@ ul{
 		}
 		h1{
 			text-align: center;
+			text-transform: uppercase;
 			@include font-size(40);
 			color: $black;
 			padding: 15px 0;
@@ -86,6 +88,38 @@ ul{
 		position: absolute;
 		top: 0;
 		right: 0;
+		li{
+
+		}
+		a{
+			color: $black;
+			letter-spacing: 1px;
+			text-transform: uppercase;
+		}
+	}
+}
+
+//========================
+// Tags
+//========================
+nav.tags{
+	padding: 50px 0;
+	margin: 0 auto;
+	text-align: center;
+
+	li.tag{
+		display: inline-block;
+  		padding: 0 3%;
+  		text-transform: uppercase;
+  		letter-spacing: 1px;
+
+  		a{
+  			color: $black;
+  			&.active{
+  				color: $orange;
+  				text-decoration: underline;
+  			}
+  		}
 	}
 }
 
@@ -102,10 +136,38 @@ ul{
 	}
 	.featuredInfo{
 		position: absolute;
+		display: block;
+		margin: 0 auto;
 		z-index: 2;
+		height: top;
+		top: 50%;
+		transform: translateY(-50%);
 		width: 100%;
 		text-align: center;
+
+		.featuredSubhead{
+			font-family: $f-serif;
+			color: $white;
+			letter-spacing: 1px;
+			@include font-size(15);
+		}
+		.featuredHeading,.featuredLink{
+			text-transform: uppercase;
+			letter-spacing: 1.5px;
+			color: $white;
+		}
+		.featuredHeading{
+			margin: 20px 0;
+		}
+		.featuredLink{
+			margin: 40px 0 0 0;
+			display: block;
+			letter-spacing: 1px;
+			@include font-size(12);
+			text-decoration: underline;
+		}
 	}
+
 	.featuredOverlay{
 		position: absolute;
 		left: 0;
@@ -119,39 +181,48 @@ ul{
 }
 
 //========================
-// Tags
-//========================
-nav.tags{
-	padding: 20px 0;
-	margin: 0 auto;
-
-	li.tag{
-		display: inline-block;
-  		padding: 0 3%;
-  		a{
-  			color: $black;
-  		}
-	}
-}
-
-//========================
 // Projects
 //========================
 article.project{
 	width: 100%;
 	position: relative;
-	margin: 0 auto;
+	margin: 50px auto;
 
 	img{
 		width: 100%;
 	}
 	.projectInfo{
 		position: absolute;
-		bottom: 0;
+		bottom: 5px;
 		left: 0;
 		background-color: $white;
+		padding: 10px;
+
 		h1{
 			display: inline;
+			text-transform: uppercase;
+			@include font-size(16);
+			letter-spacing: 1.5px;
+
+			&:after{
+				content: "/";
+				margin-left:10px;
+				margin-right:5px;
+			}
+		}
+		span{
+			@include font-size(16);
+			letter-spacing: 1px;
+			font-style: italic;
+			font-family: $f-serif;
+		}
+		a{
+			@include font-size(14);
+			text-transform: uppercase;
+			color: $orange;
+			font-weight: 700;
+			margin: 0 15px;
+			text-decoration: underline;
 		}
 	}
 }
@@ -159,6 +230,42 @@ article.project{
 //========================
 // Footer
 //========================
-footer{
+#footer{
+	padding: 55px 40px 70px 40px;
+	width: 100%;
 	background-color: $orange;
+	.footerLogo{
+		margin: 0 auto;
+		display: block;
+	}
+	span,a{
+		text-align: center;
+		display: block;
+		margin: 0 auto;
+	}
+	.contact{
+		color: $black;
+		text-transform: uppercase;
+		font-weight: 700;
+		letter-spacing: 2px;
+		@include font-size(35);
+		margin-top: 20px;
+	}
+	.email{
+		color: $white;
+		font-weight: 700;
+		margin-bottom: 20px;
+  		letter-spacing: 1px;
+	}
+	.or{
+		color: $black;
+	}
+	.learn{
+		color: $black;
+		text-decoration: underline;
+		text-transform: uppercase;
+		font-weight: 700;
+		letter-spacing: 1px;
+		font-size: 15px;
+	}
 }
