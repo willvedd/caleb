@@ -1,0 +1,51 @@
+<div class="featured">
+	<div class="featuredInfo">
+		<span class="featuredSubhead">Featured Work:</span>
+		<h2 class="featuredHeading">The Witching Hour</h2>
+		<a class="featuredLink" href="#">Learn More</a>
+	</div>
+	<div class="featuredBG">
+		<div class="featuredOverlay"></div>
+		<img src="../images/wolf.jpg">
+	</div>
+</div>
+<div class="container">
+	<nav class="tags">
+		<ul>
+			<li class="tag"><a href="#">All Work</a></li>
+			<li class="tag"><a href="#">Marks &amp; Badges</a></li>
+			<li class="tag"><a href="#">Illustration</a></li>
+			<li class="tag"><a href="#">Print &amp; Packaging</a></li>
+			<li class="tag"><a href="#">Interactive</a></li>
+		</ul>
+	</nav>
+	<article project ng-repeat="p in projects" class="project" ng-click="">
+		<img src="../images/stick.jpg">
+		<div class="projectInfo">
+			<h1>{{p.title}}</h1>
+			<span class="projectDetails">Mollases Packaging</span>
+			<a href="#">Read More</a>
+		</div>
+	</article>
+	<!-- <article portfolio class="project">
+		
+	</article>
+
+	<article portfolio class="project">
+		<img src="../images/patch.jpg">
+		<div class="projectInfo">
+			<h1>PA Patch Co</h1>
+			<span class="projectDetails">Promotional Patches</span>
+			<a href="#">Read More</a>
+		</div>
+	</article>
+
+	<article portfolio class="project">
+		<img src="../images/liquor.jpg">
+		<div class="projectInfo">
+			<h1>Folksaga</h1>
+			<span class="projectDetails">Liquor Packaging</span>
+			<a href="#">Read More</a>
+		</div>
+	</article> -->
+</div>

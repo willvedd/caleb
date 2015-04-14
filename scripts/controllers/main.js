@@ -6,10 +6,9 @@ angular.module('caleb').controller('MainCtrl', function ($scope,$rootScope, Load
   if(!$rootScope.postData){
     LoadData.fetch().then(
       function(result) {
-        $rootScope.postData = result;
-        $rootScope.homepage = result.homepage;
-        $rootScope.featured = result.featured;  
-        console.log("postData",$rootScope.postData);
+        //$rootScope.postData = result;
+        $rootScope.projects = result.projects;
+        console.log("postData",result);
         $scope.$broadcast('dataFetched');
     });
   }
@@ -18,14 +17,14 @@ angular.module('caleb').controller('MainCtrl', function ($scope,$rootScope, Load
   };
 
   
-  $rootScope.pf = pf();//This code refers to the picturefill functionality
-  var resizeId;
-  $(window).on('resize', function () {//Only execute when resize is complete
-    clearTimeout(resizeId);
-    resizeId = setTimeout(function(){
-      $rootScope.pf = pf();
-    }, 500);
-  });
+  // $rootScope.pf = pf();//This code refers to the picturefill functionality
+  // var resizeId;
+  // $(window).on('resize', function () {//Only execute when resize is complete
+  //   clearTimeout(resizeId);
+  //   resizeId = setTimeout(function(){
+  //     $rootScope.pf = pf();
+  //   }, 500);
+  // });
 
 
   function orderSigns(){

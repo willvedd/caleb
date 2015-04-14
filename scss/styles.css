@@ -1,3 +1,53 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
 /********************
 ** Breakpoints
 ********************/
@@ -140,6 +190,9 @@ ul {
 #header {
   padding: 25px 0;
 }
+#header .headerContainer {
+  position: relative;
+}
 #header .masthead img.logo {
   display: block;
   margin: 0 auto;
@@ -158,13 +211,42 @@ ul {
   float: right;
   display: inline;
   position: absolute;
+  padding-left: 15px;
   top: 0;
   right: 0;
+  width: 20%;
+  max-width: 200px;
 }
-#header nav a {
+#header nav .navNav .nav {
+  padding: 10px 0;
+}
+#header nav .navNav .nav a {
   color: #000000;
   letter-spacing: 1px;
   text-transform: uppercase;
+}
+#header nav .socialNav {
+  margin-top: 10px;
+}
+#header nav .socialNav .social {
+  display: inline-block;
+  float: left;
+  margin: 0 3px;
+  height: 30px;
+  width: 30px;
+  background-color: #2e2e2e;
+  border-radius: 50%;
+}
+#header nav .socialNav .social:first-of-type {
+  margin-left: 0;
+}
+#header nav .socialNav .social:last-of-type {
+  margin-right: 0;
+}
+#header nav .socialNav .social a {
+  height: 100%;
+  width: 100%;
+  display: block;
 }
 
 nav.tags {
@@ -174,9 +256,16 @@ nav.tags {
 }
 nav.tags li.tag {
   display: inline-block;
-  padding: 0 3%;
+  padding: 0;
   text-transform: uppercase;
   letter-spacing: 1px;
+}
+nav.tags li.tag:after {
+  content: "|";
+  padding: 0 8%;
+}
+nav.tags li.tag:last-of-type:after {
+  content: "";
 }
 nav.tags li.tag a {
   color: #000000;
@@ -249,7 +338,7 @@ article.project img {
 }
 article.project .projectInfo {
   position: absolute;
-  bottom: 5px;
+  bottom: 0;
   left: 0;
   background-color: #ffffff;
   padding: 10px;
@@ -304,7 +393,8 @@ article.project .projectInfo a {
   letter-spacing: 2px;
   font-size: 35px;
   font-size: 2.1875rem;
-  margin-top: 20px;
+  margin-top: 30px;
+  margin-bottom: 20px;
 }
 #footer .email {
   color: #ffffff;
@@ -314,6 +404,7 @@ article.project .projectInfo a {
 }
 #footer .or {
   color: #000000;
+  font-style: italic;
 }
 #footer .learn {
   color: #000000;

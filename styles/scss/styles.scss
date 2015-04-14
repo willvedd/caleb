@@ -1,3 +1,4 @@
+@import "modules/reset";
 @import "modules/variables";
 @import "modules/fancy";
 
@@ -67,6 +68,9 @@ ul{
 #header{
 	padding: 25px 0;
 
+	.headerContainer{
+		position: relative;
+	}
 	.masthead{
 		img.logo{
 			display: block;
@@ -80,21 +84,56 @@ ul{
 			padding: 15px 0;
 			margin: 0;
 		}
-	}
+	})
 	nav{
+		display: none;
+		@include bp(sml) {
+			display: inline;
+		}
 		border-left: 1px solid $black;
 		float: right;
-		display: inline;
 		position: absolute;
+		padding-left: 15px;
 		top: 0;
 		right: 0;
-		li{
+	  	width: 20%;
+  		max-width: 200px;
 
-		}
-		a{
-			color: $black;
-			letter-spacing: 1px;
-			text-transform: uppercase;
+  		.navNav{
+  			.nav{
+	  			padding: 10px 0;
+
+	  			a{
+					color: $black;
+					letter-spacing: 1px;
+					text-transform: uppercase;
+				}
+	  		}
+  		}
+  	
+		.socialNav{
+			margin-top: 10px;
+			.social{
+				display: inline-block;
+			  	float: left;
+	  			margin: 0 3px;
+	  			height: 30px;
+				width: 30px;
+				background-color: $darkGray;
+				border-radius:50%;
+
+	  			&:first-of-type{
+	  				margin-left: 0;
+	  			}
+	  			&:last-of-type{
+	  				margin-right: 0;
+	  			}
+	  			a{
+	  				height: 100%;
+	  				width: 100%;
+	  				display: block;
+	  			}
+			}
 		}
 	}
 }
@@ -109,9 +148,18 @@ nav.tags{
 
 	li.tag{
 		display: inline-block;
-  		padding: 0 3%;
+  		padding: 0;
   		text-transform: uppercase;
   		letter-spacing: 1px;
+  		&:after{
+			content: "|";
+			padding: 0 8%; 
+		}
+		&:last-of-type{
+			&:after{
+				content: "";
+			}
+		}
 
   		a{
   			color: $black;
@@ -193,7 +241,7 @@ article.project{
 	}
 	.projectInfo{
 		position: absolute;
-		bottom: 5px;
+		bottom: 0;
 		left: 0;
 		background-color: $white;
 		padding: 10px;
@@ -249,7 +297,8 @@ article.project{
 		font-weight: 700;
 		letter-spacing: 2px;
 		@include font-size(35);
-		margin-top: 20px;
+		margin-top: 30px;
+		margin-bottom: 20px;
 	}
 	.email{
 		color: $white;
@@ -259,6 +308,7 @@ article.project{
 	}
 	.or{
 		color: $black;
+		font-style: italic;
 	}
 	.learn{
 		color: $black;

@@ -1,7 +1,8 @@
 var gulp = require('gulp'),
-	sass = require('gulp-ruby-sass'),
+    sass = require('gulp-ruby-sass'),
     autoprefixer = require('gulp-autoprefixer'),
     minifycss = require('gulp-minify-css'),
+    livereload = require('gulp-livereload'),
     rename = require('gulp-rename');
 
 gulp.task('express', function() {
@@ -21,4 +22,9 @@ return sass('styles/scss', { style: 'expanded' })
     .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
     .pipe(minifycss())
     .pipe(gulp.dest('styles'))
+});
+
+gulp.task('watch', function() {
+  livereload.listen();
+  gulp.watch('styles/scss/*.scss', ['styles']);
 });

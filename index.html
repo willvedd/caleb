@@ -15,71 +15,27 @@
 </head>
 <body ng-app="caleb">
 	<section id="header">
-		<div class="masthead">
+		<div class="headerContainer">
+			<div class="masthead">
 			<img class="logo" src="../images/logo.png">
-			<h1>Caleb Heisey</h1>
-		</div>
-		<nav>
-			<ul>
-				<li><a href="#">About</a></li>
-				<li><a href="#">Contact</a></li>
-				<li><a href="#">Shop</a></li>
-				<li><a class="social" href="#">Facebook</a></li>
-				<li><a class="social" href="#">Dribbble</a></li>
-				<li><a class="social" href="#">Twitter</a></li>
-			</ul>
-		</nav>
-	</section>
-	<main>
-		<div class="featured">
-			<div class="featuredInfo">
-				<span class="featuredSubhead">Featured Work:</span>
-				<h2 class="featuredHeading">The Witching Hour</h2>
-				<a class="featuredLink" href="#">Learn More</a>
+				<h1>Caleb Heisey</h1>
 			</div>
-			<div class="featuredBG">
-				<div class="featuredOverlay"></div>
-				<img src="../images/wolf.jpg">
-			</div>
-		</div>
-		<div class="container">
-			<nav class="tags">
-				<ul>
-					<li class="tag"><a href="#">All Work</a></li>
-					<li class="tag"><a href="#">Marks &amp; Badges</a></li>
-					<li class="tag"><a href="#">Illustration</a></li>
-					<li class="tag"><a href="#">Print &amp; Packaging</a></li>
-					<li class="tag"><a href="#">Interactive</a></li>
+			<nav>
+				<ul class="navNav">
+					<li class="nav"><a href="#">About</a></li>
+					<li class="nav"><a href="#">Contact</a></li>
+					<li class="nav"><a href="#">Shop</a></li>
+				</ul>
+				<ul class="socialNav">
+					<li class="social"><a href="#"><span class="screen-reader-text">Facebook</span></a></li>
+					<li class="social"><a href="#"><span class="screen-reader-text">Dribbble</span></a></li>
+					<li class="social"><a href="#"><span class="screen-reader-text">Twitter</span></a></li>
 				</ul>
 			</nav>
-
-			<article class="project">
-				<img src="../images/stick.jpg">
-				<div class="projectInfo">
-					<h1>Sticky Paws</h1>
-					<span class="projectDetails">Mollases Packaging</span>
-					<a href="#">Read More</a>
-				</div>
-			</article>
-
-			<article class="project">
-				<img src="../images/patch.jpg">
-				<div class="projectInfo">
-					<h1>PA Patch Co</h1>
-					<span class="projectDetails">Promotional Patches</span>
-					<a href="#">Read More</a>
-				</div>
-			</article>
-
-			<article class="project">
-				<img src="../images/liquor.jpg">
-				<div class="projectInfo">
-					<h1>Folksaga</h1>
-					<span class="projectDetails">Liquor Packaging</span>
-					<a href="#">Read More</a>
-				</div>
-			</article>
 		</div>
+	</section>
+	<main>
+		<ng-view></ng-view>
 	</main>	
 	<footer id="footer">
 		<img class="footerLogo" src="../images/logo.png">
@@ -95,7 +51,8 @@
 <script src="scripts/app.js"></script>
 <script src="scripts/controllers/main.js"></script>
 <script src="scripts/services/loadData.js"></script>
-<!-- <script src="scripts/directives/featuredDir.js"></script>
-<script src="scripts/directives/portfolioDir.js"></script> -->
+<script src="scripts/directives/projectDir.js"></script>
+<!-- <script src="scripts/directives/featuredDir.js"></script> -->
+
 
 </html>
