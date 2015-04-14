@@ -12,40 +12,22 @@
 <div class="container">
 	<nav class="tags">
 		<ul>
-			<li class="tag"><a href="#">All Work</a></li>
-			<li class="tag"><a href="#">Marks &amp; Badges</a></li>
-			<li class="tag"><a href="#">Illustration</a></li>
-			<li class="tag"><a href="#">Print &amp; Packaging</a></li>
-			<li class="tag"><a href="#">Interactive</a></li>
+			<li class="tag"><a ng-click="filter()">All Work</a></li>
+			<li class="tag"><a ng-click="filter()">Illustration</a></li>
+			<li class="tag"><a ng-click="filter()">Interactive</a></li>
+			<li class="tag"><a ng-click="filter()">Marks &amp; Badges</a></li>
+			<li class="tag"><a ng-click="filter()">Print &amp; Packaging</a></li>
+			<!-- <li ng-repeat="t in portfolioTypes" class="tag">
+				<a ng-click="filter()">{{t.name}}</a>
+			</li> -->
 		</ul>
 	</nav>
 	<article project ng-repeat="p in projects" class="project" ng-click="">
-		<img src="../images/stick.jpg">
+		<img src="{{p.images.sizes[pf]}}" alt="{{p.images.title}}">
 		<div class="projectInfo">
 			<h1>{{p.title}}</h1>
-			<span class="projectDetails">Mollases Packaging</span>
-			<a href="#">Read More</a>
+			<span class="projectDetails">{{p.subtext}}</span>
+			<!--<a href="#">Read More</a>-->
 		</div>
 	</article>
-	<!-- <article portfolio class="project">
-		
-	</article>
-
-	<article portfolio class="project">
-		<img src="../images/patch.jpg">
-		<div class="projectInfo">
-			<h1>PA Patch Co</h1>
-			<span class="projectDetails">Promotional Patches</span>
-			<a href="#">Read More</a>
-		</div>
-	</article>
-
-	<article portfolio class="project">
-		<img src="../images/liquor.jpg">
-		<div class="projectInfo">
-			<h1>Folksaga</h1>
-			<span class="projectDetails">Liquor Packaging</span>
-			<a href="#">Read More</a>
-		</div>
-	</article> -->
 </div>
