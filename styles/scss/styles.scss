@@ -84,7 +84,7 @@ ul{
 			padding: 15px 0;
 			margin: 0;
 		}
-	})
+	}
 	nav{
 		display: none;
 		@include bp(sml) {
@@ -113,6 +113,10 @@ ul{
   	
 		.socialNav{
 			margin-top: 10px;
+			display: none;
+			@include bp(sml) {
+				display: block;
+			} 
 			.social{
 				display: inline-block;
 			  	float: left;

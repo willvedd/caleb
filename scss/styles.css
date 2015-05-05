@@ -207,15 +207,20 @@ ul {
   margin: 0;
 }
 #header nav {
+  display: none;
   border-left: 1px solid #000000;
   float: right;
-  display: inline;
   position: absolute;
   padding-left: 15px;
   top: 0;
   right: 0;
   width: 20%;
   max-width: 200px;
+}
+@media only screen and (min-width: 768px) {
+  #header nav {
+    display: inline;
+  }
 }
 #header nav .navNav .nav {
   padding: 10px 0;
@@ -227,6 +232,12 @@ ul {
 }
 #header nav .socialNav {
   margin-top: 10px;
+  display: none;
+}
+@media only screen and (min-width: 768px) {
+  #header nav .socialNav {
+    display: block;
+  }
 }
 #header nav .socialNav .social {
   display: inline-block;

@@ -23,7 +23,9 @@
 		</ul>
 	</nav>
 	<article project ng-repeat="p in projects" class="project" ng-click="">
-		<img src="{{p.images.sizes[pf]}}" alt="{{p.images.title}}">
+		<div class="imgContain">
+			<li><img src="{{p.images.sizes[pf]}}" alt="{{p.images.title}}"></li>
+		</div>
 		<div class="projectInfo">
 			<h1>{{p.title}}</h1>
 			<span class="projectDetails">{{p.subtext}}</span>
