@@ -1,7 +1,7 @@
 'use strict';
 
 angular
-  .module('caleb', ['ngRoute'])
+  .module('caleb', ['ngRoute','angular-flexslider'])
   .run(function($route, $rootScope) {
     console.log("Caleb app starting");
   })

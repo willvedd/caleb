@@ -22,10 +22,22 @@
 			</li> -->
 		</ul>
 	</nav>
-	<article project ng-repeat="p in projects" class="project" ng-click="">
-		<div class="imgContain">
-			<li><img src="{{p.images.sizes[pf]}}" alt="{{p.images.title}}"></li>
-		</div>
+	<article project ng-repeat="p in projects track by $index" class="project">
+
+		<!-- <div class="imgContain">
+			<ul class="imgSlideContain imgSlideContain-{{$index}}">
+				<li ng-repeat="i in p.images" class="imgSlide">
+					<img alt="{{i.title}}"  title="{{i.title}}" src="">
+				</li>
+			</ul>
+		</div> -->
+
+		<flex-slider slide="s in p.images track by $index" slideshow-speed="3000" animation-speed="600" control-nav="false" direction-nav="true">
+		    <li>
+		        <img ng-src="{{s.sizes[pf]}}">
+		    </li>
+		</flex-slider>
+
 		<div class="projectInfo">
 			<h1>{{p.title}}</h1>
 			<span class="projectDetails">{{p.subtext}}</span>

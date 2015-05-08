@@ -9,9 +9,7 @@ angular.module('caleb').controller('MainCtrl', function ($scope,$rootScope, Load
         $rootScope.projects = result.projects;
         $rootScope.portfolioTypes = result.portfolio_types;
         console.log("postData",result);
-        $scope.$broadcast('dataFetched');
-
-        console.log(result);
+        $rootScope.$broadcast('dataFetched');
     });
   }
   else{
