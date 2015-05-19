@@ -32,7 +32,7 @@
 			</ul>
 		</div> -->
 
-		<flex-slider slide="s in p.images track by $index" slideshow-speed="3000" animation-speed="600" control-nav="false" direction-nav="true">
+		<flex-slider slide="s in p.images track by $index" slideshow-speed="3000" animation-speed="600" init-delay="{{randomOffset()}}" control-nav="false" direction-nav="true">
 		    <li>
 		        <img ng-src="{{s.sizes[pf]}}">
 		    </li>

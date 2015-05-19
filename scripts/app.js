@@ -25,33 +25,34 @@ angular
 
 function pf(){
   var width = $(window).width();
-  // if(width > 1440){
-  //   return "xxlarge"
-  // }
-  // else if(width > 1280){
-  //   return "xlarge"
-  // }
-  // else if(width > 960){
-  //   return "large"
-  // }
-  // else if(width > 768){
-  //   return "medium"
-  // }
-  // else if(width > 640){
-  //   return "small"
-  // }
-  // else{
-  //   return "xsmall"
-  // }
-  if(width > 1080){
+  if(width > 1440){
+    console.log("xxlarge");
+    return "xxlarge"
+  }
+  else if(width > 1280){
+    console.log("xlarge");
+    return "xlarge"
+  }
+  else if(width > 960){
+    console.log("large");
     return "large"
   }
   else if(width > 768){
+    console.log("medium");
     return "medium"
   }
-  else{
-    return "thumbnail"
+  else if(width > 640){
+    console.log("small");
+    return "small"
   }
+  else{
+    console.log("xsmall");
+    return "xsmall"
+  }
+}
+
+function randomOffset(){
+  return Math.random() * 3000;
 }
 
 

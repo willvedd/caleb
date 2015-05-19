@@ -155,18 +155,20 @@ nav.tags{
   		padding: 0;
   		text-transform: uppercase;
   		letter-spacing: 1px;
-  		&:after{
-			content: "|";
-			padding: 0 8%; 
-		}
+  		vertical-align: middle;
 		&:last-of-type{
-			&:after{
-				content: "";
+			a{
+  				border-right: none;
 			}
 		}
-
+		
   		a{
   			color: $black;
+  			cursor: pointer;
+  			vertical-align: middle;
+		  	border-right: 1px solid #000;
+  			padding: 0 15px;
+  			
   			&.active{
   				color: $orange;
   				text-decoration: underline;

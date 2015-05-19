@@ -270,16 +270,17 @@ nav.tags li.tag {
   padding: 0;
   text-transform: uppercase;
   letter-spacing: 1px;
-}
-nav.tags li.tag:after {
-  content: "|";
-  padding: 0 8%;
-}
-nav.tags li.tag:last-of-type:after {
-  content: "";
+  vertical-align: middle;
 }
 nav.tags li.tag a {
   color: #000000;
+  cursor: pointer;
+  vertical-align: middle;
+  border-right: 1px solid #000;
+  padding: 0 15px;
+}
+nav.tags li.tag a:last-of-type {
+  border-right: none;
 }
 nav.tags li.tag a.active {
   color: #f15c44;

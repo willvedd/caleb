@@ -25,6 +25,10 @@ angular.module('caleb').controller('MainCtrl', function ($scope,$rootScope, Load
       $rootScope.$apply();
     }, 500);
   });
+
+  $rootScope.randomOffset = function(){
+    return Math.floor(Math.random() * 3000);
+  }
 })
 
 
