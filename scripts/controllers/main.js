@@ -6,6 +6,7 @@ angular.module('caleb').controller('MainCtrl', function ($scope,$rootScope, Load
   if(!$rootScope.postData){
     LoadData.fetch().then(
       function(result) {
+        $rootScope.result = result;
         $rootScope.projects = result.projects;
         $rootScope.portfolioTypes = result.portfolio_types;
         console.log("postData",result);
@@ -25,6 +26,15 @@ angular.module('caleb').controller('MainCtrl', function ($scope,$rootScope, Load
       $rootScope.$apply();
     }, 500);
   });
+
+  //Active States on tags
+  $scope.select= function(item) {
+      $scope.selected = item; 
+  };
+
+  $scope.isActive = function(item) {
+        return $scope.selected === item;
+  };
 
   $rootScope.randomOffset = function(){
     return Math.floor(Math.random() * 3000);

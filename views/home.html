@@ -1,4 +1,4 @@
-<div class="featured">
+<!-- <div class="featured">
 	<div class="featuredInfo">
 		<span class="featuredSubhead">Featured Work:</span>
 		<h2 class="featuredHeading">The Witching Hour</h2>
@@ -8,36 +8,36 @@
 		<div class="featuredOverlay"></div>
 		<img src="./images/wolf.jpg">
 	</div>
-</div>
+</div> -->
 <div class="container">
 	<nav class="tags">
 		<ul>
-			<li class="tag"><a ng-click="filter()">All Work</a></li>
-			<li class="tag"><a ng-click="filter()">Illustration</a></li>
-			<li class="tag"><a ng-click="filter()">Interactive</a></li>
-			<li class="tag"><a ng-click="filter()">Marks &amp; Badges</a></li>
-			<li class="tag"><a ng-click="filter()">Print &amp; Packaging</a></li>
+			<li class="tag">
+				<a ng-click="filterType = '';select('all')" ng-class="{active: isActive('all')}">All Work</a>
+			</li>
+			<li class="tag">
+				<a ng-click="filterType = {project_type: 'marks-badges'};select('marks-badges')" ng-class="{active: isActive('marks-badges')}">Marks &amp; Badges</a>
+			</li>
+			<li class="tag">
+				<a ng-click="filterType = {project_type: 'illustration'};select('illustration')" ng-class="{active: isActive('illustration')}">Illustration</a>
+			</li>
+			<li class="tag">
+				<a ng-click="filterType = {project_type: 'print-packaging'};select('print-packaging')" ng-class="{active: isActive('print-packaging')}">Print &amp; Packaging</a>
+			</li>
+			<li class="tag">
+				<a ng-click="filterType = {project_type: 'interactive'};select('interactive')" ng-class="{active: isActive('interactive')}">Interactive</a>
+			</li>
 			<!-- <li ng-repeat="t in portfolioTypes" class="tag">
 				<a ng-click="filter()">{{t.name}}</a>
 			</li> -->
 		</ul>
 	</nav>
-	<article project ng-repeat="p in projects track by $index" class="project">
-
-		<!-- <div class="imgContain">
-			<ul class="imgSlideContain imgSlideContain-{{$index}}">
-				<li ng-repeat="i in p.images" class="imgSlide">
-					<img alt="{{i.title}}"  title="{{i.title}}" src="">
-				</li>
-			</ul>
-		</div> -->
-
-		<flex-slider slide="s in p.images track by $index" slideshow-speed="3000" animation-speed="600" init-delay="{{randomOffset()}}" control-nav="false" direction-nav="true">
+	<article project ng-repeat="p in projects | filter: filterType" data-proj-type="{{p.project_type}}" class="project">
+		<flex-slider slide="s in p.images track by $index" slideshow-speed="3000" animation-speed="600" control-nav="false" direction-nav="true">
 		    <li>
 		        <img ng-src="{{s.sizes[pf]}}">
 		    </li>
 		</flex-slider>
-
 		<div class="projectInfo">
 			<h1>{{p.title}}</h1>
 			<span class="projectDetails">{{p.subtext}}</span>

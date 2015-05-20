@@ -23,12 +23,23 @@ $mq-retina:     "only screen and (-webkit-min-device-pixel-ratio: 1.5), only scr
 ********************/
 $f-sans-serif: "soleil", Arial, sans-serif;
 $f-serif: "edita", Georgia,serif;
+@font-face {
+  font-family: "icons";
+  src:url("..fonts/caleb.eot");
+  src:url("..fonts/caleb.eot?#iefix") format("embedded-opentype"),
+    url("..fonts/caleb.woff") format("woff"),
+    url("..fonts/caleb.ttf") format("truetype"),
+    url("..fonts/caleb.svg#caleb") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
 
 /********************
 ** Colors
 ********************/
 $white: #ffffff;
-$black: #000000;
+$black: #262425;
 $grey: #7d7c7a;
 $orange: #f15c44;
 $lightGray: #d9d9d9;
@@ -140,12 +151,12 @@ $baseFontSize: 16;
     line-height: #{$pixelSize / $baseFontSize}rem;
 }
 
-@mixin transition($property, $duration, $function: linear, $delay: 0) { 
-  -webkit-transition: $property $duration $function $delay;
-  -moz-transition:  $property $duration $function $delay;
-  -ms-transition:   $property $duration $function $delay;
-  -o-transition:    $property $duration $function $delay;
-  transition:     $property $duration $function $delay;
+@mixin transition($property, $duration, $function: linear) { 
+  -webkit-transition: $property $duration $function;
+  -moz-transition:  $property $duration $function;
+  -ms-transition:   $property $duration $function;
+  -o-transition:    $property $duration $function;
+  transition:     $property $duration $function;
 }
 
 @mixin transform($transform) {
