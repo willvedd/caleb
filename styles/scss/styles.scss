@@ -133,7 +133,7 @@ ul{
 				background-color: $darkGray;
 				border-radius:50%;
 				&:before{
-					font-family: 'icons';
+					font-family: "icons";
 					color: $white; 
 				}
 
@@ -273,7 +273,133 @@ nav.tags{
 		height: 100%;
 	}
 }
+//========================
+// About
+//========================
+$about-max-width : 800px;
+.about-header{
+	padding-bottom: 0!important;
+	background-image: url('../images/gradient.png');
+	background-repeat: repeat-x;
+	.masthead{
+		max-width: $about-max-width;
+		margin: 0 auto;
+		width: 100%;
+	}
+	.about-portrait{
+		width: 33%;
+		max-width: 250px;
+	}
+}
 
+
+.about-container{
+	max-width: $about-max-width;
+	padding: 15px 0 50px 0;
+	@include bp(sml) {
+		padding: 20px 0 70px 0;
+	}
+}
+.about-body{
+	strong{
+		color: $orange;
+	}
+	a{
+		color: $orange;
+		&:hover{
+			color: $orange;
+		}
+		// 	&:after{
+		// 		width: 100%;
+		// 	}
+		// } 
+		// &:after{
+		// 	content: "";
+		// 	margin: 0 auto;
+		// 	display: block;
+		// 	height: 2px;
+		// 	width: 0;  
+		// 	margin-top: 3px;
+		// 	background-color: $orange;
+		// 	@include transition(width,.15s);
+		// }
+	}
+	h2{
+		color: $orange;
+		@include font-size(16);
+		padding-bottom: 10px;
+		font-weight: bold;
+		letter-spacing: .05em;
+	}
+	p{
+		@include line-height(26);
+	}
+	&.body-top{
+		width: 100%;
+		padding: 30px 0;
+  		border-bottom: 2px solid $black;
+  		p{
+			@include font-size(24);
+			@include line-height(32);
+			font-weight: bold;
+			letter-spacing: .05em;
+		}
+
+  		@include bp(sml) {
+  			padding: 40px 0;
+  			p{
+  				@include font-size(32);
+				@include line-height(40);
+  			}
+  		}
+		
+	}
+	&.body-middle{
+		width: 100%;
+		padding: 20px 0;
+		border-bottom: 2px solid $black;
+		p{
+			@include font-size(18);
+			font-family: $f-serif;
+			padding: 10px 0;
+		}
+	}
+	&.body-left,&.body-right{
+		width: 100%;
+		padding: 20px 0;
+
+		@include bp(sml) {
+			width: 50%;
+			float: left;
+			padding: 20px 20px 20px 0;
+		}
+		p{
+			@include font-size(16);
+			font-family: $f-serif;
+		}
+
+	}
+	&.body-right{
+		border-top: 2px solid $black;
+
+		@include bp(sml) {
+			padding: 20px 0 20px 20px;
+			border-top: none;
+			border-left: 2px solid $black;
+		}
+	}
+	&.body-bottom{
+		padding: 20px 0;
+		border-top: 2px solid #262425;
+		@include bp(sml) {
+			clear: both;
+		}
+		p{
+			font-family: $f-serif;
+			@include font-size(16);
+		}
+	}
+}
 //========================
 // Projects
 //========================
@@ -416,11 +542,8 @@ a.flex-next{
 //========================
 // Icons font
 //========================
-
-
-
 [data-icon]:before {
-  font-family: "caleb" !important;
+  font-family: "icons" !important;
   content: attr(data-icon);
   font-style: normal !important;
   font-weight: normal !important;
@@ -434,7 +557,7 @@ a.flex-next{
 
 [class^="icon-"]:before,
 [class*=" icon-"]:before {
-  font-family: "caleb" !important;
+  font-family: "icons" !important;
   font-style: normal !important;
   font-weight: normal !important;
   font-variant: normal !important;
