@@ -98,7 +98,7 @@ ul{
 		float: right;
 		position: absolute;
 		top: 0;
-		right: 0;
+		right: 2%;
 	  	width: 13%;
 	  	padding: 3px 33px 13px 33px;
 	  	min-width: 140px;
@@ -111,6 +111,7 @@ ul{
 	  			a{
 					color: $black;
 					letter-spacing: .15em;
+					cursor: pointer;
 					text-transform: uppercase;
 				}
 	  		}
@@ -132,9 +133,28 @@ ul{
 				width: 20px;
 				background-color: $darkGray;
 				border-radius:50%;
+				position: relative;
+				@include transition(all, .25s, ease-in-out);
+
+				a{
+					position: absolute;
+					width: 100%;
+					height: 100%;
+					top: 0;
+					left: 0;
+				}
+				&:hover{
+					@include transform(translateY(-2px));
+				}
+
 				&:before{
 					font-family: "icons";
 					color: $white; 
+					position: absolute;
+					width: 100%;
+					text-align: center;
+					font-size: 12px;
+					line-height: 20px;
 				}
 
 	  			&:first-of-type{
@@ -142,11 +162,6 @@ ul{
 	  			}
 	  			&:last-of-type{
 	  				margin-right: 0;
-	  			}
-	  			a{
-	  				height: 100%;
-	  				width: 100%;
-	  				display: block;
 	  			}
 			}
 		}
@@ -289,6 +304,16 @@ $about-max-width : 800px;
 	.about-portrait{
 		width: 33%;
 		max-width: 250px;
+		margin-bottom: -2px;
+	}
+	#backButton{
+		position: absolute;
+		top: 0;
+		left: 6%;
+		color: $black;
+		&:before{
+			content: "<";
+		}
 	}
 }
 
@@ -369,7 +394,7 @@ $about-max-width : 800px;
 		padding: 20px 0;
 
 		@include bp(sml) {
-			width: 50%;
+			width: 41%;
 			float: left;
 			padding: 20px 20px 20px 0;
 		}
@@ -381,8 +406,9 @@ $about-max-width : 800px;
 	}
 	&.body-right{
 		border-top: 2px solid $black;
-
+		
 		@include bp(sml) {
+			width: 59%;
 			padding: 20px 0 20px 20px;
 			border-top: none;
 			border-left: 2px solid $black;

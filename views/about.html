@@ -1,17 +1,18 @@
 <section id="header" class="about-header">
 	<div class="headerContainer">
 		<div class="masthead">
+			<a id="backButton" href="/#/">Back</a>
 			<img class="about-portrait" src="./images/portrait.png">
 		</div>
 		<nav>
 			<ul class="navNav">
 				<li class="nav"><a href="/#/">Portfolio</a></li>
-				<li class="nav"><a href="#footer">Contact</a></li>
+				<li class="nav" contact-nav ng-click="scrollFooter()"><a>Contact</a></li>
 			</ul>
 			<ul class="socialNav">
-				<li class="social icon-instagram"><a href="/#/"><span class="screen-reader-text">Instagram</span></a></li>
-				<li class="social icon-dribble"><a href="/#/"><span class="screen-reader-text">Dribbble</span></a></li>
-				<li class="social icon-twitter"><a href="/#/"><span class="screen-reader-text">Twitter</span></a></li>
+				<li class="social icon-instagram"><a href="https://instagram.com/calebheisey/"><span class="screen-reader-text">Instagram</span></a></li>
+				<li class="social icon-dribble"><a href="https://dribbble.com/calebheisey"><span class="screen-reader-text">Dribbble</span></a></li>
+				<li class="social icon-twitter"><a href="https://twitter.com/calebheisey"><span class="screen-reader-text">Twitter</span></a></li>
 			</ul>
 		</nav>
 	</div>
@@ -38,7 +39,14 @@
 		</div>
 		<div class="about-body body-bottom">
 			<h2>Get to know me!</h2>
-			<p>In addition to email you can contact me through various social media. Follow me on <a href="#">Dribbble</a> and see tid bits of work-in-progress that you won't see here on my main site. You can also find me on <a href="#">Twitter</a> or <a href="#">Instagram</a> tweeting and posting my finds on the internet or around philly.</p>
+			<p>In addition to email you can contact me through various social media. Follow me on <a href="https://dribbble.com/calebheisey">Dribbble</a> and see tid bits of work-in-progress that you won't see here on my main site. You can also find me on <a href="https://twitter.com/calebheisey">Twitter</a> or <a href="https://instagram.com/calebheisey/">Instagram</a> tweeting and posting my finds on the internet or around philly.</p>
 		</div>
 	</div>
 </main>
+<footer id="footer">
+	<img class="footerLogo" src="./images/logo.png">
+	<span class="contact">Get In Touch!</span>
+	<a class="email">HeiseyCB@gmail.com</a>
+	<span class="or">or</span>
+	<a class="learn" href="/#/">View my portfolio</a>
+</footer>

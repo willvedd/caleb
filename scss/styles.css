@@ -59,8 +59,8 @@ table {
 ********************/
 @font-face {
   font-family: "icons";
-  src: url("..fonts/caleb.eot");
-  src: url("..fonts/caleb.eot?#iefix") format("embedded-opentype"), url("..fonts/caleb.woff") format("woff"), url("..fonts/caleb.ttf") format("truetype"), url("..fonts/caleb.svg#caleb") format("svg");
+  src: url("fonts/caleb.eot");
+  src: url("fonts/caleb.eot?#iefix") format("embedded-opentype"), url("fonts/caleb.woff") format("woff"), url("fonts/caleb.ttf") format("truetype"), url("fonts/caleb.svg#caleb") format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -222,7 +222,7 @@ ul {
   float: right;
   position: absolute;
   top: 0;
-  right: 0;
+  right: 2%;
   width: 13%;
   padding: 3px 33px 13px 33px;
   min-width: 140px;
@@ -239,6 +239,7 @@ ul {
 #header nav .navNav .nav a {
   color: #262425;
   letter-spacing: .15em;
+  cursor: pointer;
   text-transform: uppercase;
 }
 #header nav .socialNav {
@@ -258,21 +259,41 @@ ul {
   width: 20px;
   background-color: #2e2e2e;
   border-radius: 50%;
+  position: relative;
+  -webkit-transition: all 0.25s ease-in-out;
+  -moz-transition: all 0.25s ease-in-out;
+  -ms-transition: all 0.25s ease-in-out;
+  -o-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+}
+#header nav .socialNav .social a {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+#header nav .socialNav .social:hover {
+  -webkit-transform: translateY(-2px);
+  -moz-transform: translateY(-2px);
+  -ms-transform: translateY(-2px);
+  -o-transform: translateY(-2px);
+  transform: translateY(-2px);
 }
 #header nav .socialNav .social:before {
   font-family: "icons";
   color: #ffffff;
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  font-size: 12px;
+  line-height: 20px;
 }
 #header nav .socialNav .social:first-of-type {
   margin-left: 0;
 }
 #header nav .socialNav .social:last-of-type {
   margin-right: 0;
-}
-#header nav .socialNav .social a {
-  height: 100%;
-  width: 100%;
-  display: block;
 }
 
 nav.tags {
@@ -405,6 +426,16 @@ nav.tags li.tag a:after {
 .about-header .about-portrait {
   width: 33%;
   max-width: 250px;
+  margin-bottom: -2px;
+}
+.about-header #backButton {
+  position: absolute;
+  top: 0;
+  left: 6%;
+  color: #262425;
+}
+.about-header #backButton:before {
+  content: "<";
 }
 
 .about-container {
@@ -479,7 +510,7 @@ nav.tags li.tag a:after {
 }
 @media only screen and (min-width: 768px) {
   .about-body.body-left, .about-body.body-right {
-    width: 50%;
+    width: 41%;
     float: left;
     padding: 20px 20px 20px 0;
   }
@@ -494,6 +525,7 @@ nav.tags li.tag a:after {
 }
 @media only screen and (min-width: 768px) {
   .about-body.body-right {
+    width: 59%;
     padding: 20px 0 20px 20px;
     border-top: none;
     border-left: 2px solid #262425;

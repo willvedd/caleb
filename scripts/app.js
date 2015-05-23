@@ -51,9 +51,7 @@ function pf(){
   }
 }
 
-function randomOffset(){
-  return Math.random() * 3000;
-}
+
 
 
 

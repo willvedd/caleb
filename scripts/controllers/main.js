@@ -29,11 +29,13 @@ angular.module('caleb').controller('MainCtrl', function ($scope,$rootScope, Load
 
   //Active States on tags
   $scope.select= function(item) {
-      $scope.selected = item; 
+      $('.tag a').removeClass('active');
+      $scope.selected = item;
+
   };
 
   $scope.isActive = function(item) {
-        return $scope.selected === item;
+    return $scope.selected === item;
   };
 
   $rootScope.randomOffset = function(){
