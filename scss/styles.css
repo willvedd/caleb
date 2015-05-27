@@ -752,16 +752,7 @@ li.flex-nav-prev {
 }
 
 a.flex-next {
-  right: 0 !important;
-  top: 0 !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  width: 100% !important;
-  height: 100% !important;
-  background-color: transparent !important;
-  border: none !important;
-  color: transparent !important;
-  text-shadow: none !important;
+  display: none;
 }
 a.flex-next:before {
   display: none !important;
