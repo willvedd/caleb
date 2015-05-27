@@ -1,7 +1,7 @@
 'use strict';
 
 angular
-  .module('caleb', ['ngRoute','angular-flexslider'])
+  .module('caleb', ['ngRoute','angular-flexslider','ngSanitize'])
   .run(function($route, $rootScope) {
     console.log("Caleb app starting");
   })
