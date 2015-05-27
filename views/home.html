@@ -3,23 +3,28 @@
 		<div class="masthead">
 		<a href="/#/">
 			<img class="logo" src="./images/logo.png">
-			<h1>Caleb Heisey</h1>
+			<h1 class="logo">Caleb Heisey</h1>
 		</a>
 		</div>
-		<nav>
-			<ul class="navNav">
-				<li class="nav"><a href="/#/about">About</a></li>
-				<li class="nav" contact-nav ng-click="scrollFooter()"><a>Contact</a></li>
-			</ul>
-			<ul class="socialNav">
-				<li class="social icon-instagram"><a href="https://instagram.com/calebheisey/"><span class="screen-reader-text">Instagram</span></a></li>
-				<li class="social icon-dribble"><a href="https://dribbble.com/calebheisey"><span class="screen-reader-text">Dribbble</span></a></li>
-				<li class="social icon-twitter"><a href="https://twitter.com/calebheisey"><span class="screen-reader-text">Twitter</span></a></li>
-			</ul>
+		<nav id="nav" navigation-dir>
+			<div class="navWrap">
+				<h1 class="logo" aria-hide="true">Caleb Heisey</h1>
+				<div class="navContain">
+					<ul class="navList">
+						<li class="navItem"><a href="/#/about">About</a></li>
+						<li class="navItem" contact-nav ng-click="scrollFooter()"><a>Contact</a></li>
+					</ul>
+					<ul class="socialNav">
+						<li class="social icon-instagram"><a href="https://instagram.com/calebheisey/"><span class="screen-reader-text">Instagram</span></a></li>
+						<li class="social icon-dribble"><a href="https://dribbble.com/calebheisey"><span class="screen-reader-text">Dribbble</span></a></li>
+						<li class="social icon-twitter"><a href="https://twitter.com/calebheisey"><span class="screen-reader-text">Twitter</span></a></li>
+					</ul>
+				</div>
+			</div>
 		</nav>
 	</div>
 </section>
-<main>
+<main id="mainContent">
 	<div class="container">
 		<nav class="tags">
 			<ul>

@@ -67,6 +67,76 @@ ul{
 //========================
 // Header
 //========================
+@mixin mobile-sticky-nav{
+	display: block!important;
+	background-color: $black;
+	width: 100%;
+	position: fixed;
+	backface-visibility: hidden;
+	top: 0;
+	left: 0;
+	z-index: 3;
+	max-width: none;
+	min-width: 0;
+	padding: 0;
+	right: 0;
+	float: none;
+	-moz-animation: fadeIn .35s;
+	-o-animation: fadeIn .35s;
+	-webkit-animation: fadeIn .35s;
+	animation: fadeIn .35s;
+
+	h1.logo{
+		display: none;
+		vertical-align: middle;
+		font-size: 11.5pt;
+		color: $white;
+		padding: 10px 0;
+		float: left;
+
+		@include bp(sml) {
+			display: inline-block;
+		}
+	}
+	.navWrap{
+		max-width: 1080px;
+		margin: 0 auto;
+		width: 95%;
+	}
+	.navContain{
+		text-align: center;
+		@include bp(sml) {
+			float: right;
+		}
+	}
+	ul.navList{
+		display: inline-block;
+		vertical-align: middle;
+		padding: 0 20px;
+
+		li.navItem{
+			display: inline-block;
+			padding: 10px;
+			
+			a{
+				color: $white;
+			}
+		}
+	}
+	ul.socialNav{
+		margin-top: 0;
+		display: inline-block;
+		vertical-align: middle;
+		.social{
+			background-color: $white;
+			&:before{
+				color: $black;
+				left: 0;
+			}
+		}
+	}
+}
+
 #header{
 	padding: 25px 0;
 
@@ -77,23 +147,25 @@ ul{
 		img.logo{
 			display: block;
 			margin: 0 auto;
-		}
-		h1{
-			text-align: center;
-			text-transform: uppercase;
-			font-size: 20pt;
-			letter-spacing: .13em;
-			font-weight: 700;
-			color: $black;
-			padding: 15px 0;
-			margin: 0;
+			height: 75px;
 		}
 	}
-	nav{
+	h1.logo{
+		text-align: center;
+		text-transform: uppercase;
+		font-size: 20pt;
+		letter-spacing: .13em;
+		font-weight: 700;
+		color: $black;
+		padding: 15px 0;
+		margin: 0;
+	}
+
+	nav#nav{
 		display: none;
 		@include bp(sml) {
 			display: inline;
-		}
+		} 
 		border-left: 1px solid $black;
 		float: right;
 		position: absolute;
@@ -103,9 +175,12 @@ ul{
 	  	padding: 3px 33px 13px 33px;
 	  	min-width: 140px;
   		max-width: 200px;
+  		h1{
+  			display: none;
+  		}
 
-  		.navNav{
-  			.nav{
+  		ul.navList{
+  			li.navItem{
 	  			padding: 10px 0;
 
 	  			a{
@@ -115,11 +190,9 @@ ul{
 					text-transform: uppercase;
 				}
 	  		}
-  		}
-  	
-		.socialNav{
+  		} 
+  		ul.socialNav{
 			margin-top: 10px;
-			display: none;
 
 			@include bp(sml) {
 				display: block;
@@ -154,7 +227,7 @@ ul{
 					width: 100%;
 					text-align: center;
 					font-size: 12px;
-					line-height: 20px;
+					line-height: 22px;
 				}
 
 	  			&:first-of-type{
@@ -165,6 +238,14 @@ ul{
 	  			}
 			}
 		}
+		@include bp(sml-force) {
+			@include mobile-sticky-nav;
+			display: block;
+			position: relative;
+		}
+  		&.sticky{
+  			@include mobile-sticky-nav; 
+  		}
 	}
 }
 
@@ -307,12 +388,32 @@ $about-max-width : 800px;
 		margin-bottom: -2px;
 	}
 	#backButton{
+		display: none;
+		@include bp(sml) {
+			display: block;
+		}
 		position: absolute;
 		top: 0;
 		left: 6%;
 		color: $black;
+		margin-left: 0;
+		@include transition(margin-left,.25s, ease-in-out);
+
 		&:before{
-			content: "<";
+			@include transition(margin-left,.25s, ease-in-out);
+			margin-left: 0;
+			content: "e";
+			font-family: "icons";
+			vertical-align: middle;
+			color: $black;
+			@include font-size(22);
+		}
+
+		&:hover{
+			margin-left: -2px;
+			&:before{
+				margin-left: -3px;
+			}
 		}
 	}
 }
@@ -334,20 +435,6 @@ $about-max-width : 800px;
 		&:hover{
 			color: $orange;
 		}
-		// 	&:after{
-		// 		width: 100%;
-		// 	}
-		// } 
-		// &:after{
-		// 	content: "";
-		// 	margin: 0 auto;
-		// 	display: block;
-		// 	height: 2px;
-		// 	width: 0;  
-		// 	margin-top: 3px;
-		// 	background-color: $orange;
-		// 	@include transition(width,.15s);
-		// }
 	}
 	h2{
 		color: $orange;
@@ -433,6 +520,7 @@ article.project{
 	width: 100%;
 	position: relative;
 	margin: 50px auto;
+	z-index: 1;
 
 	img{
 		width: 100%;
@@ -443,7 +531,7 @@ article.project{
 		left: 0;
 		background-color: $white;
 		padding: 10px;
-		z-index: 2;//overtop flexslider
+		z-index: 11;//overtop flexslider
 
 		h1{
 			display: inline;
@@ -473,34 +561,6 @@ article.project{
 			text-decoration: underline;
 		}
 	}
-	// ul.imgSlideContain{
-	// 	position: relative;
-	// 	list-style: none;
-	// 	overflow: hidden;
-	// 	width: 100%;
-	// 	padding: 0;
-	// 	margin: 0;
-	// }
-	// li.imgSlide{
-	// 	list-style: none;
-	// 	position: absolute;
-	// 	top: 0;
-	// 	left: 0;
-		
-	// 	&:first-child{
-	// 		position: relative;
-	// 		display: block;
-	// 		float: left;
-	// 	}
-
-	// 	img{
-	// 	  display: block;
-	// 	  height: auto;
-	// 	  float: left;
-	// 	  width: 100%;
-	// 	  border: 0;
-	// 	}
-	// }
 }
 li.flex-nav-prev{
 	display: none!important;
