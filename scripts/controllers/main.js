@@ -29,9 +29,10 @@ angular.module('caleb').controller('MainCtrl', function ($scope,$rootScope, Load
 
   //Active States on tags
   $scope.select= function(item) {
+      $('article.project').removeClass('fadeIn');
       $('.tag a').removeClass('active');
       $scope.selected = item;
-
+      $('article.project').addClass('fadeIn');
   };
 
   $scope.isActive = function(item) {
