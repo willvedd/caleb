@@ -131,6 +131,16 @@ html {
   -webkit-font-smoothing: antialiased !important;
   -moz-osx-font-smoothing: grayscale;
 }
+html * {
+  -webkit-transition: color 0.25s ease-in;
+  -moz-transition: color 0.25s ease-in;
+  -ms-transition: color 0.25s ease-in;
+  -o-transition: color 0.25s ease-in;
+  transition: color 0.25s ease-in;
+}
+html.wf-loading * {
+  color: transparent !important;
+}
 
 body, html {
   font-family: "soleil", Arial, sans-serif;

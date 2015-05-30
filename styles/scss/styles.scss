@@ -16,6 +16,14 @@ html{
 	text-rendering: optimizeLegibility!important;
     -webkit-font-smoothing: antialiased!important;
     -moz-osx-font-smoothing: grayscale;
+    *{
+    	@include transition(color,.25s,ease-in);
+    }
+    &.wf-loading{
+    	*{
+    		color: transparent!important;	
+    	}
+    }
 }
 body, html{
 	font-family: $f-sans-serif;
