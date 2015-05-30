@@ -1,7 +1,7 @@
 /********************
 ** Breakpoints
 ********************/
-
+$bp-extrasmall:           321;
 $bp-small:           768;
 $bp-medium:           1024;
 $bp-large:           1200;
@@ -12,6 +12,7 @@ $bp-extralarge:          1600;
 ********************/
 
 $MQs : true;
+$mq-extrasmall:     "only screen and (max-width: #{$bp-extrasmall}px)";
 $mq-small-force:     "only screen and (max-width: #{$bp-small}px)";
 $mq-small:     "only screen and (min-width: #{$bp-small}px)";
 $mq-medium:       "only screen and (min-width: #{$bp-medium}px)";
@@ -60,7 +61,10 @@ $darkGray: #2e2e2e;
 
 @mixin bp($point) {
   @if ($MQs) {
-    @if $point == sml {
+    @if $point == x-sml {
+        @media #{$mq-extrasmall} { @content; }
+      }
+      @else if $point == sml {
         @media #{$mq-small} { @content; }
       }
       @else if $point == sml-force {

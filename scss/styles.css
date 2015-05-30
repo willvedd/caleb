@@ -356,8 +356,19 @@ ul {
   #header nav#nav ul.navList {
     display: inline-block;
     vertical-align: middle;
+  }
+}
+@media only screen and (max-width: 768px) and (max-width: 321px) {
+  #header nav#nav ul.navList {
+    padding: 0px 15px 0 0;
+  }
+}
+@media only screen and (max-width: 768px) and (min-width: 768px) {
+  #header nav#nav ul.navList {
     padding: 0 20px;
   }
+}
+@media only screen and (max-width: 768px) {
   #header nav#nav ul.navList li.navItem {
     display: inline-block;
     padding: 10px;
@@ -423,7 +434,16 @@ ul {
 #header nav#nav.sticky ul.navList {
   display: inline-block;
   vertical-align: middle;
-  padding: 0 20px;
+}
+@media only screen and (max-width: 321px) {
+  #header nav#nav.sticky ul.navList {
+    padding: 0px 15px 0 0;
+  }
+}
+@media only screen and (min-width: 768px) {
+  #header nav#nav.sticky ul.navList {
+    padding: 0 20px;
+  }
 }
 #header nav#nav.sticky ul.navList li.navItem {
   display: inline-block;
@@ -734,12 +754,17 @@ article.project img {
   width: 100%;
 }
 article.project .projectInfo {
-  position: absolute;
-  bottom: 0;
-  left: 0;
+  position: relative;
   background-color: #ffffff;
   padding: 10px;
   z-index: 11;
+}
+@media only screen and (min-width: 768px) {
+  article.project .projectInfo {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
 }
 article.project .projectInfo h1 {
   display: inline;
@@ -769,6 +794,12 @@ article.project .projectInfo a {
   font-weight: 700;
   margin: 0 15px;
   text-decoration: underline;
+}
+
+@media only screen and (max-width: 768px) {
+  .flexslider {
+    margin: 0 !important;
+  }
 }
 
 li.flex-nav-prev {

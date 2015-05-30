@@ -120,7 +120,14 @@ ul{
 	ul.navList{
 		display: inline-block;
 		vertical-align: middle;
-		padding: 0 20px;
+		@include bp(x-sml) { 
+			padding: 0px 15px 0 0;
+		}
+		@include bp(sml) {
+			padding: 0 20px;
+		}
+		
+		
 
 		li.navItem{
 			display: inline-block;
@@ -541,9 +548,14 @@ article.project{
 		width: 100%;
 	}
 	.projectInfo{
-		position: absolute;
-		bottom: 0;
-		left: 0;
+		position: relative;
+
+		@include bp(sml) {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+		}
+		
 		background-color: $white;
 		padding: 10px;
 		z-index: 11;//overtop flexslider
@@ -575,6 +587,11 @@ article.project{
 			margin: 0 15px;
 			text-decoration: underline;
 		}
+	}
+}
+.flexslider{
+	@include bp(sml-force) {
+		margin: 0!important;
 	}
 }
 li.flex-nav-prev{
