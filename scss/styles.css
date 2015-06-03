@@ -261,6 +261,11 @@ ul {
 #header nav#nav ul.navList li.navItem a:hover:after {
   width: 100%;
 }
+#header nav#nav ul.navList li.navPipe {
+  padding: 0;
+  color: #ffffff;
+  display: none;
+}
 #header nav#nav ul.socialNav {
   margin-top: 10px;
 }
@@ -370,6 +375,7 @@ ul {
   #header nav#nav ul.navList {
     display: inline-block;
     vertical-align: middle;
+    padding-right: 10px;
   }
 }
 @media only screen and (max-width: 768px) and (max-width: 321px) {
@@ -383,6 +389,9 @@ ul {
   }
 }
 @media only screen and (max-width: 768px) {
+  #header nav#nav ul.navList li.navPipe {
+    display: inline-block;
+  }
   #header nav#nav ul.navList li.navItem {
     display: inline-block;
     padding: 10px;
@@ -470,6 +479,7 @@ ul {
 #header nav#nav.sticky ul.navList {
   display: inline-block;
   vertical-align: middle;
+  padding-right: 10px;
 }
 @media only screen and (max-width: 321px) {
   #header nav#nav.sticky ul.navList {
@@ -480,6 +490,9 @@ ul {
   #header nav#nav.sticky ul.navList {
     padding: 0 20px;
   }
+}
+#header nav#nav.sticky ul.navList li.navPipe {
+  display: inline-block;
 }
 #header nav#nav.sticky ul.navList li.navItem {
   display: inline-block;
@@ -830,16 +843,28 @@ article.project .projectInfo h1 {
   letter-spacing: 1.5px;
 }
 article.project .projectInfo h1:after {
-  content: "/";
   margin-left: 9px;
   margin-right: 5px;
+}
+@media only screen and (min-width: 768px) {
+  article.project .projectInfo h1:after {
+    content: "/";
+  }
 }
 article.project .projectInfo span {
   font-size: 16px;
   font-size: 1rem;
   letter-spacing: .12em;
   font-style: italic;
+  display: block;
+  padding-top: 4px;
   font-family: "edita", Georgia, serif;
+}
+@media only screen and (min-width: 768px) {
+  article.project .projectInfo span {
+    padding-top: 0;
+    display: inline;
+  }
 }
 article.project .projectInfo a {
   font-size: 14px;

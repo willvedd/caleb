@@ -123,6 +123,8 @@ ul{
 	ul.navList{
 		display: inline-block;
 		vertical-align: middle;
+		padding-right: 10px;
+
 		@include bp(x-sml) { 
 			padding: 0px 15px 0 0;
 		}
@@ -130,7 +132,9 @@ ul{
 			padding: 0 20px;
 		}
 		
-		
+  		li.navPipe{
+			display: inline-block;
+		}
 
 		li.navItem{
 			display: inline-block;
@@ -255,6 +259,11 @@ ul{
 					}
 				}
 	  		}
+	  		li.navPipe{
+	  			padding: 0;
+  				color: $white;
+  				display: none;
+  			}
   		} 
   		ul.socialNav{
 			margin-top: 10px;
@@ -613,16 +622,25 @@ article.project{
 			letter-spacing: 1.5px;
 
 			&:after{
-				content: "/";
 				margin-left:9px;
 				margin-right:5px;
+				@include bp(sml){
+					content: "/";
+				}
 			}
 		}
 		span{
 			@include font-size(16);
 			letter-spacing: .12em;
 			font-style: italic;
+			display: block;
+			padding-top: 4px;
 			font-family: $f-serif;
+
+			@include bp(sml) {
+				padding-top: 0;
+				display: inline;
+			}
 		}
 		a{
 			@include font-size(14);
