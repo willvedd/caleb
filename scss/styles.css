@@ -240,15 +240,26 @@ ul {
   color: #262425;
   letter-spacing: .15em;
   cursor: pointer;
+  display: inline-block;
   text-transform: uppercase;
-  -webkit-transition: color 0.25s linear;
-  -moz-transition: color 0.25s linear;
-  -ms-transition: color 0.25s linear;
-  -o-transition: color 0.25s linear;
-  transition: color 0.25s linear;
 }
-#header nav#nav ul.navList li.navItem a:hover {
-  color: #f15c44;
+#header nav#nav ul.navList li.navItem a:after {
+  content: "";
+  display: block;
+  height: 1px;
+  width: 0;
+  position: relative;
+  left: -1px;
+  top: 2px;
+  background-color: #262425;
+  -webkit-transition: width 0.25s ease-in-out;
+  -moz-transition: width 0.25s ease-in-out;
+  -ms-transition: width 0.25s ease-in-out;
+  -o-transition: width 0.25s ease-in-out;
+  transition: width 0.25s ease-in-out;
+}
+#header nav#nav ul.navList li.navItem a:hover:after {
+  width: 100%;
 }
 #header nav#nav ul.socialNav {
   margin-top: 10px;
@@ -326,7 +337,7 @@ ul {
   #header nav#nav h1.logo {
     display: none;
     vertical-align: middle;
-    font-size: 11.5pt;
+    font-size: 12pt;
     color: #ffffff;
     padding: 10px 0;
     float: left;
@@ -338,6 +349,9 @@ ul {
   }
 }
 @media only screen and (max-width: 768px) {
+  #header nav#nav h1.logo a {
+    color: #ffffff;
+  }
   #header nav#nav .navWrap {
     max-width: 1080px;
     margin: 0 auto;
@@ -376,6 +390,25 @@ ul {
   #header nav#nav ul.navList li.navItem a {
     color: #ffffff;
   }
+  #header nav#nav ul.navList li.navItem a:after {
+    content: "";
+    display: block;
+    height: 1px;
+    width: 0;
+    margin: 0 auto;
+    position: relative;
+    left: -1px;
+    top: 2px;
+    background-color: #ffffff;
+    -webkit-transition: width 0.25s ease-in-out;
+    -moz-transition: width 0.25s ease-in-out;
+    -ms-transition: width 0.25s ease-in-out;
+    -o-transition: width 0.25s ease-in-out;
+    transition: width 0.25s ease-in-out;
+  }
+  #header nav#nav ul.navList li.navItem a:hover:after {
+    width: 100%;
+  }
   #header nav#nav ul.socialNav {
     margin-top: 0;
     display: inline-block;
@@ -408,7 +441,7 @@ ul {
 #header nav#nav.sticky h1.logo {
   display: none;
   vertical-align: middle;
-  font-size: 11.5pt;
+  font-size: 12pt;
   color: #ffffff;
   padding: 10px 0;
   float: left;
@@ -417,6 +450,9 @@ ul {
   #header nav#nav.sticky h1.logo {
     display: inline-block;
   }
+}
+#header nav#nav.sticky h1.logo a {
+  color: #ffffff;
 }
 #header nav#nav.sticky .navWrap {
   max-width: 1080px;
@@ -452,6 +488,25 @@ ul {
 #header nav#nav.sticky ul.navList li.navItem a {
   color: #ffffff;
 }
+#header nav#nav.sticky ul.navList li.navItem a:after {
+  content: "";
+  display: block;
+  height: 1px;
+  width: 0;
+  margin: 0 auto;
+  position: relative;
+  left: -1px;
+  top: 2px;
+  background-color: #ffffff;
+  -webkit-transition: width 0.25s ease-in-out;
+  -moz-transition: width 0.25s ease-in-out;
+  -ms-transition: width 0.25s ease-in-out;
+  -o-transition: width 0.25s ease-in-out;
+  transition: width 0.25s ease-in-out;
+}
+#header nav#nav.sticky ul.navList li.navItem a:hover:after {
+  width: 100%;
+}
 #header nav#nav.sticky ul.socialNav {
   margin-top: 0;
   display: inline-block;
@@ -463,7 +518,7 @@ ul {
 }
 
 nav.tags {
-  padding: 50px 0;
+  padding: 50px 0 15px 0;
   margin: 0 auto;
   text-align: center;
   display: none;
@@ -854,6 +909,14 @@ a.flex-next:before {
   font-weight: 700;
   letter-spacing: 1px;
   font-size: 15px;
+}
+
+.user-select {
+  -webkit-user-select: text;
+  -khtml-user-select: text;
+  -moz-user-select: text;
+  -o-user-select: text;
+  user-select: text;
 }
 
 [data-icon]:before {

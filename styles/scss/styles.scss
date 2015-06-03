@@ -97,13 +97,16 @@ ul{
 	h1.logo{
 		display: none;
 		vertical-align: middle;
-		font-size: 11.5pt;
+		font-size: 12pt;
 		color: $white;
 		padding: 10px 0;
 		float: left;
 
 		@include bp(sml) {
 			display: inline-block;
+		}
+		a{
+			color: $white;
 		}
 	}
 	.navWrap{
@@ -135,7 +138,35 @@ ul{
 			
 			a{
 				color: $white;
+				&:after{
+					content: "";
+					display: block;
+					height: 1px;
+					width: 0;
+					margin: 0 auto;
+					position: relative;
+					left: -1px;
+					top: 2px;
+					background-color: $white;
+					@include transition(width,.25s,ease-in-out);
+				}
+
+				&:hover{
+					&:after{
+						width: 100%;
+					}
+				}
 			}
+			// &:after{
+			// 	content: "";
+			// 	display: block;
+			//   	height: 19px;
+			// 	width: 1px;
+			// 	position: relative;
+			// 	left: 16%;
+			// 	top: 3px;
+			// 	background-color: $white;
+			// }
 		}
 	}
 	ul.socialNav{
@@ -202,11 +233,25 @@ ul{
 					color: $black;
 					letter-spacing: .15em;
 					cursor: pointer;
+					display: inline-block;
 					text-transform: uppercase;
-					@include transition(color,.25s,linear);
-				
+
+					&:after{
+						content: "";
+						display: block;
+						height: 1px;
+						width: 0;
+						position: relative;
+						left: -1px;
+						top: 2px;
+						background-color: $black;
+						@include transition(width,.25s,ease-in-out);
+					}
+
 					&:hover{
-						color: $orange;
+						&:after{
+							width: 100%;
+						}
 					}
 				}
 	  		}
@@ -272,7 +317,7 @@ ul{
 // Tags
 //========================
 nav.tags{
-	padding: 50px 0;
+	padding: 50px 0 15px 0;
 	margin: 0 auto;
 	text-align: center;
 	display: none;
@@ -657,6 +702,13 @@ a.flex-next{
 		letter-spacing: 1px;
 		font-size: 15px;
 	}
+}
+.user-select{
+	-webkit-user-select: text;
+    -khtml-user-select: text;
+    -moz-user-select: text;
+    -o-user-select: text;
+    user-select: text;
 }
 //========================
 // Icons font
