@@ -11,7 +11,7 @@
 
 html{
 	//Below prevent text highlighting
-	@include highlightText(none);
+	//@include highlightText(none);
 	font-smoothing: always;
 	text-rendering: optimizeLegibility!important;
     -webkit-font-smoothing: antialiased!important;
